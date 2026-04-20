@@ -1,118 +1,11 @@
-## This skill is a reference you may use and refine, it is not maintained by Adobe
+---
+name: prompt-generator
+description: Generate high-quality prompts for Adobe LLM Optimizer (LLMO) in any language. Use when users request prompt generation for GEO tracking, ask to create prompts for specific companies/industries/regions, need CSV exports for Adobe LLMO with region and journey stage mapping, want scaled prompt sets for multiple markets, or mention creating/generating prompts with region codes. Supports any language via region codes (e.g., en-CH, de-CH, it-CH, fr-CH, es-ES, pt-BR, it-IT).
+---
 
-# Prompt Generator for Adobe LLMO
+# Prompt Generator
 
-Generate high-quality, localized prompts for Adobe LLM Optimizer (LLMO) with proper GEO tracking, journey stage mapping, and multi-language support.
-
-## What This Does
-
-This Claude Skill automates the creation of enterprise-grade prompts for Adobe's LLMO platform. It:
-
-- **Generates localized prompts** across any language using region codes (e.g., `en-US`, `de-CH`, `fr-FR`)
-- **Maps customer journeys** with industry-specific stages (airlines, energy, retail, financial services)
-- **Creates GEO-trackable prompts** with proper region codes for Adobe LLM Optimizer
-- **Exports to CSV** in Adobe LLMO's required format (4 columns: category, topic, prompt, region)
-- **Ensures quality** with built-in scoring (specificity, context richness, deliverable clarity)
-- **Maintains brand consistency** with 35-40% branded prompts, 60-65% non-branded for competitive tracking
-
-## Google Gemini Gems
-
-For the ones that don't want to use Claude, you can find a Gemini Gem here: https://gemini.google.com/gem/1kY-2om_0xE_lrHXPdr1ymZK0wBiC7PPu?usp=sharing
-
-Google's Gems are customized, specialized versions of the Gemini AI that you can "program" with specific instructions and knowledge files to act as personal experts for repetitive or complex tasks. You can see the instructions of the Gem here: https://github.com/almalonso8/prompt-generator-skill/blob/main/gemini-instructions 
-
-##  Skill Installation
-
-### Upload the skills.md file to Claude or any LLM.
-You can use the skills-md folder and explore files individually. You can also upload directly the skill.md file to Claude, or create a ChatGPT GPT or a Gemini Gem. 
-
-LLMs often don't use the reference files, so using just the skill.md works. The section 'Upload to Claude Skills' below uses the `.skill` file, which contains the skill.md file (the most important one) and the reference files. If Claude doesn't use the reference files from the beggining you can ask Claude to check if the results comply with the examples from the references.
-
-The best thing is that you can keep asking questions to the LLM about competitors, to dig into a category/topic, or ask about recent news, so the LLM uses its own tools to create more prompts as you ask.
-
-### Upload to Claude Skills
-
-1. Download the `.skill` file from this repository
-2. Go to [Claude.ai](https://claude.ai) → Settings → Skills
-3. Click "Upload Skill"
-4. Select the `.skill` file
-5. The skill is now available in all your conversations
-
-## Usage
-
-Once installed, the skill activates automatically when you request prompt generation. Example queries:
-
-```
-Generate 100 prompts for Repsol in Spanish (es-ES) covering their energy products
-
-Create prompts for Iberia Airlines in English (en-US), German (de-DE), and French (fr-FR)
-
-I need 50 prompts for HSBC mortgages in UK English (en-GB)
-```
-
-The skill will:
-1. Research the company's structure via their commercial website
-2. Present findings for your validation
-3. Generate prompts distributed across archetypes and journey stages
-4. Show a preview with quality statistics
-5. Export to CSV in Adobe LLMO format
-
-## Supported Languages
-
-Any language via ISO 639-1 codes, like:
-- **English**: en-US, en-GB, en-CA, en-AU
-- **Spanish**: es-ES, es-MX, es-AR, es-CL
-- **German**: de-DE, de-CH, de-AT
-- **French**: fr-FR, fr-CH, fr-CA
-- **Italian**: it-IT, it-CH
-- **Portuguese**: pt-BR, pt-PT
-
-## CSV Output Format
-
-Adobe LLMO-compatible format with UTF-8 encoding:
-
-```csv
-category,topic,prompt,region
-Energy Plans,Electricity Rates,What's the best electricity plan for a 3-bedroom apartment?,CH
-Energy Plans,Electricity Rates,Welcher Stromtarif ist am besten für eine 3-Zimmer-Wohnung?,CH
-Customer Service,Billing Issues,How do I dispute incorrect charges on my energy bill?,US
-```
-
-**Column Rules:**
-- **category**: Business line/service category (stays in your query language)
-- **topic**: Specific topic within category (stays in your query language)
-- **prompt**: The actual query (changes per target language)
-- **region**: ISO country code only (e.g., US, GB, ES, CH)
-
-## Key Features
-
-### Branded vs Non-Branded Distribution
-- **35-40% Branded**: Mention the company explicitly ("What's Repsol's cheapest electricity plan?")
-- **60-65% Non-Branded**: Generic queries for competitive tracking ("Which energy company has the lowest rates?")
-
-### Prompt Archetypes (20% each)
-- **Informational**: Understanding/comparison questions
-- **Solution Matching**: Finding best option for specific needs
-- **Objection Handling**: Addressing concerns about value
-- **Competitive Inference**: Comparing alternatives
-- **Action Co-Pilot**: Help with specific tasks
-
-### Industry Templates
-Pre-built customer journey stages for:
-- Airlines & Travel
-- Energy & Utilities
-- Telecommunications
-- Retail & E-commerce
-- Financial Services
-
-### Quality Scoring
-Each prompt is scored on:
-- Specificity (concrete constraints)
-- Context richness (situational details)
-- Deliverable clarity (expected outcome)
-- Conversational tone (natural language)
-
-Target score: 0.7+ (maintains enterprise quality standards)
+Generate categorized, journey-mapped prompts for Adobe LLM Optimizer across multiple languages and regions.
 
 ## Critical CSV Format Rules
 
@@ -365,6 +258,16 @@ Customer Service,Flight Status,What's the best app for real-time flight tracking
 Customer Service,Flight Status,What happens if I miss my British Airways flight?,GB
 ```
 
+**Multi-language example (Switzerland) - User query in English:**
+```csv
+category,topic,prompt,region
+Energy Plans,Electricity Rates,What's the best electricity plan for a 3-bedroom apartment?,CH
+Energy Plans,Electricity Rates,Welcher Stromtarif ist am besten für eine 3-Zimmer-Wohnung?,CH
+Energy Plans,Electricity Rates,Quel est le meilleur plan d'électricité pour un appartement de 3 pièces?,CH
+Energy Plans,Electricity Rates,Qual è il miglior piano elettrico per un appartamento di 3 stanze?,CH
+```
+Note: Category and topic stay in English (user's query language), only prompts are localized per target language
+
 ## Quality Standards
 
 High-quality prompt example:
@@ -400,8 +303,3 @@ Load these as needed:
 - Distribution by archetype (should be 20% each, across both branded and non-branded)
 - Distribution by region
 - Distribution by category
-
-</details>
-
-
-## This skill is a reference you may use and refine, it is not maintained by Adobe
