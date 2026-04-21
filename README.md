@@ -23,8 +23,8 @@ Google's Gems are customized, specialized versions of the Gemini AI that you can
 
 ##  Skill Installation
 
-### Upload the skills-md directory to Claude
-You can use the skills-md folder and explore files individually. You can also upload directly the skill.md file to Claude, or create a ChatGPT GPT or a Gemini Gem. 
+### Upload the skill directory (prompt-generator) to Claude
+You can use the "prompt-generator" folder and explore files individually. You can also upload directly the skill.md file to Claude, or create a ChatGPT GPT or a Gemini Gem. 
 
 LLMs often don't use the reference files, so using just the skill.md works. The section 'Upload to Claude Skills' below uses the skills-md folder, which contains the skill.md file (the most important one) and the reference files. If Claude doesn't use the reference files from the beggining you can ask Claude to check if the results comply with the examples from the references.
 
