@@ -33,7 +33,7 @@ The best thing is that you can keep asking questions to the LLM about competitor
 ### Upload to Claude Skills
 
 1. Download or clone this repository
-2. Extract the prompt-generator folder and its files under skills-md folder and make a zip file of it
+2. Extract the "prompt-generator" folder and its content under "skills" folder and make a zip file of it
 2. Go to [Claude.ai](https://claude.ai) → Customize → Skills
 3. Click "+" → "Create skill" → "Upload a skill"
 4. Select the .zip file you created in previous step
