@@ -17,9 +17,9 @@ This Claude Skill automates the creation of enterprise-grade prompts for Adobe's
 
 ## Google Gemini Gems
 
-For the ones that don't want to use Claude, you can find a Gemini Gem here: https://gemini.google.com/gem/1kY-2om_0xE_lrHXPdr1ymZK0wBiC7PPu?usp=sharing
+For the ones that don't want to use Claude, you can use Goggle Gemini Gem.
 
-Google's Gems are customized, specialized versions of the Gemini AI that you can "program" with specific instructions and knowledge files to act as personal experts for repetitive or complex tasks. You can see the instructions of the Gem here: https://github.com/almalonso8/prompt-generator-skill/blob/main/gemini-instructions 
+Google's Gems are customized, specialized versions of the Gemini AI that you can "program" with specific instructions and knowledge files to act as personal experts for repetitive or complex tasks. You can see the instructions of the Gem here: https://github.com/bersha/prompt-generator/blob/main/gemini-instructions 
 
 ##  Skill Installation
 
