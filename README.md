@@ -19,23 +19,24 @@ This Claude Skill automates the creation of enterprise-grade prompts for Adobe's
 
 For the ones that don't want to use Claude, you can use Goggle Gemini Gem.
 
-Google's Gems are customized, specialized versions of the Gemini AI that you can "program" with specific instructions and knowledge files to act as personal experts for repetitive or complex tasks. You can see the instructions of the Gem here: https://github.com/bersha/prompt-generator/blob/main/gemini-instructions 
+Google's Gems are customized, specialized versions of the Gemini AI that you can "program" with specific instructions and knowledge files to act as personal experts for repetitive or complex tasks. You can create your own Gem and paste the instructions from the instructions of the Gem here: https://github.com/bersha/prompt-generator/blob/main/gemini-instructions.md 
 
 ##  Skill Installation
 
-### Upload the skills.md file to Claude or any LLM.
+### Upload the skills-md directory to Claude
 You can use the skills-md folder and explore files individually. You can also upload directly the skill.md file to Claude, or create a ChatGPT GPT or a Gemini Gem. 
 
-LLMs often don't use the reference files, so using just the skill.md works. The section 'Upload to Claude Skills' below uses the `.skill` file, which contains the skill.md file (the most important one) and the reference files. If Claude doesn't use the reference files from the beggining you can ask Claude to check if the results comply with the examples from the references.
+LLMs often don't use the reference files, so using just the skill.md works. The section 'Upload to Claude Skills' below uses the skills-md folder, which contains the skill.md file (the most important one) and the reference files. If Claude doesn't use the reference files from the beggining you can ask Claude to check if the results comply with the examples from the references.
 
 The best thing is that you can keep asking questions to the LLM about competitors, to dig into a category/topic, or ask about recent news, so the LLM uses its own tools to create more prompts as you ask.
 
 ### Upload to Claude Skills
 
-1. Download the `.skill` file from this repository
-2. Go to [Claude.ai](https://claude.ai) → Settings → Skills
-3. Click "Upload Skill"
-4. Select the `.skill` file
+1. Download or clone this repository
+2. Extract the prompt-generator folder and its files under skills-md folder and make a zip file of it
+2. Go to [Claude.ai](https://claude.ai) → Customize → Skills
+3. Click "+" → "Create skill" → "Upload a skill"
+4. Select the .zip file you created in previous step
 5. The skill is now available in all your conversations
 
 ## Usage
